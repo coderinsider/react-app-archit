@@ -1,13 +1,15 @@
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-
+import { Home } from './src/pages/Home';
 const app = express();
+app.use(express.static('./build', {
+	index: false
+}))
 app.get('/*', (req, res) => {
 	const reactApp = renderToString(
 		<div>
-			<h1>I am working in USA Company</h1>
-			<p>This is from a server side</p>
+			<Home />
 		</div>
 	);
 
@@ -21,6 +23,6 @@ app.get('/*', (req, res) => {
 		`
 	);
 });
-app.listen(8080, () => {
-	console.log(`Server running on port: 8080`);
+app.listen(8082, () => {
+	console.log(`Server running on port: 8082`);
 });
