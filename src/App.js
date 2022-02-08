@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter as BeautifulInWhite, Link as WebLink, Routes, Route } from 'react-router-dom';
+import { Link as WebLink, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Article } from './pages/Article';
 const App = () => {
    return (
-      <BeautifulInWhite>
+      <>
          <h1>Server Side rendering (SSR)</h1>
          <ul>
             <li>
@@ -24,7 +24,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/article" element={<Article />} />
          </Routes>
-      </BeautifulInWhite>
+      </>
    );
 };
 export default App;
